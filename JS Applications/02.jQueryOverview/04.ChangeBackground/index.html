@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>04.ChangeBackground</title>
+    <script src="scripts/jquery-2.0.2.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <label for="color-picker">Pick a background color: </label>
+    <input id="color-picker" type="color" />
+    <script>
+        $("#color-picker").change(function () {
+            $("body").css("background-color", $("#color-picker").val());
+        });
+    </script>
+</body>
+</html>

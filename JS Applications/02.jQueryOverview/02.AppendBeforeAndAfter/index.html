@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>02.AppendBeforeAndAfter</title>
+
+    <script type="text/javascript" src="Scripts/jquery-2.0.2.js"></script>
+    <link type="text/css" href="style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <p>This element will be surrounded!</p>
+        <button id="prepend">Append before element</button>
+        <button id="append">Append after element</button>
+    </div>
+
+    <script type="text/javascript" src="scripts/jquery-1.10.1.js"></script>
+
+    <script type="text/javascript">
+        jQuery.prototype.appendNewElement = function (elementToAppend) {
+            $(this).after(elementToAppend);
+        }
+
+        jQuery.prototype.prependNewElement = function (elementToPrepend) {
+            $(this).before(elementToPrepend);
+        }
+
+        var newElement = document.createElement('div');
+        newElement.setAttribute("class", "append");
+
+        $('#prepend').on('click', function () {
+            $(".container").prependNewElement(newElement.cloneNode(true));
+        });
+        $('#append').on('click', function () {
+            $(".container").appendNewElement(newElement.cloneNode(true));
+        });
+
+    </script>
+</body>
+</html>

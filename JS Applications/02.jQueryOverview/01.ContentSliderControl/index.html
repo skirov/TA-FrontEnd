@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>01.ContentSliderControl</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="slider">
+        <div id="sliderContainer">
+            <ul id="sliderItemsList">
+                <li class="sliderItem">
+                    <div>
+                        <img src="images/1.jpg" /><div class="overlay">Item 1</div>
+                    </div>
+                </li>
+                <li class="sliderItem">
+                    <div>
+                        <img src="images/2.jpg" /><div class="overlay">Item 2</div>
+                    </div>
+                </li>
+                <li class="sliderItem">
+                    <div>
+                        <img src="images/1.jpg" /><div class="overlay">Item 3</div>
+                    </div>
+                </li>
+                <li class="sliderItem">
+                    <div>
+                        <img src="images/2.jpg" /><div class="overlay">Item 4</div>
+                    </div>
+                </li>
+                <li class="sliderItem">
+                    <div>
+                        <img src="images/1.jpg" /><div class="overlay">Item 5</div>
+                    </div>
+                </li>
+                <li class="sliderItem">
+                    <div>
+                        <img src="images/2.jpg" /><div class="overlay">Item 6</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="navigation">
+            <img id="navPrev" src="images/prev.png" />
+            <img id="navNext" src="images/next.png" />
+        </div>
+    </div>
+    <script type="text/javascript" src="Scripts/jquery-2.0.2.js"></script>
+    <script type="text/javascript" src="slider.js"></script>
+    <script type="text/javascript">
+        var slider = new Slider('#sliderItemsList');
+        slider.init();
+    </script>
+</body>
+</html>

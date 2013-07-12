@@ -162,27 +162,23 @@ pip-log.txt
 # Mac crap
 .DS_Store
 
-# Other files
-*.doc
-*.docx
-*.cs
-*.pptx
-*.ppt
-*.mp4
+# CSharp
+*.sln
+*.csproj
+*.vbproj
+*.fsproj
+*.dbproj
+*.config
+AssemblyInfo.cs
 *.zip
 *.rar
-*.pdf
-*.config
-*.mswwsettings
-*.WMA
-*.sln
-*csproj
-*.DotSettings
+*.pptx
+*.docx
+*.xlsx
 
+#Folders
+BGCoder
+TestSolution
 EXAM
 JSExam
-Demos
-CMS
 TeamBlackcurrant
-Advanced-OOP-demos
-02.jQueryOverview
