@@ -177,6 +177,7 @@ AssemblyInfo.cs
 *.xlsx
 
 #Folders
+SEO
 BGCoder
 TestSolution
 EXAM
@@ -184,4 +185,3 @@ SliceAndDiceExam
 JSExam
 ExampleExam
 TeamBlackcurrant
-SEO
