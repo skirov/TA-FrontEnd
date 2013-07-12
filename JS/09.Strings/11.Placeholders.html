@@ -1,0 +1,40 @@
+﻿<html>
+<head>
+    <title>11.Placeholders</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+
+        <p>Write a function that formats a string using placeholders.</p>
+        <br />
+        <input type="submit" value="Show result" onclick="ShowResult()" />
+    </fieldset>
+
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        function stringFormat() {
+            var getPlaceholders = arguments[0].match(/\{\d\}/g); //get the "{someNumberValue}" placeholders
+            var numberOfValues = arguments.length - 2; //the number of values passed after the text
+            var result = arguments[0]; //the text. In owr case {0}, {1}, {0} text {2}
+
+            for (var i = 0; i <= numberOfValues; i++) {
+                var placeHolderToReplace = new RegExp("\\{" + i + "\\}", "g"); //e.g. matches {0}, {1} etc.
+                result = result.replace(placeHolderToReplace, arguments[i + 1]); //replace placeholders globally with the following(their) argument. 
+            }
+
+            return result;
+        }
+
+        function ShowResult() {
+            var format = "{0}, {1}, {0} text {2}";
+            var str = stringFormat(format, 1, "Pesho", "Gosho");
+
+            jsConsole.writeLine(str);
+
+        }
+    </script>
+</body>
+</html>

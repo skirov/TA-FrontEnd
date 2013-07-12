@@ -1,0 +1,26 @@
+﻿<html>
+<head>
+    <title>04.AllDivs</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+
+        <div>Write a function to count the number of divs on the web page</div>
+        <br />
+        <input type="submit" value="CountOccurences" onclick="CountOccurences()" />
+
+    </fieldset>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        function CountOccurences() {
+            var countOccurences = document.getElementsByTagName("div").length;
+
+            jsConsole.writeLine("Number of divs on the page - " + countOccurences);
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>09.InACircleOutOfRectangle</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        
+        <label for="x">X = </label>
+        <input type="text" id="x" />
+        <br />
+        
+        <label for="y">Y = </label>
+        <input type="text" id="y" />
+        <br />
+        
+        <input type="submit" value="Is the point in the circle and out of the rectangle" onclick="InACircleOutOfRectangle()" />
+        
+    </fieldset>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    
+	<script>
+        function InACircleOutOfRectangle()
+        {
+            var x = parseInt(document.getElementById("x").value);
+            var y = parseInt(document.getElementById("y").value);
+            var absoluteX = Math.abs(x - 1);
+            var absoluteY = Math.abs(y - 1);
+            var checkInCircle = Math.sqrt((absoluteX * absoluteX) + (absoluteY * absoluteY)) <= 3; //3 is the radius
+            var checkInRectangle = (x <= 5 && x >= -1 && y <= 1 && y >= -1);
+            if (checkInCircle && checkInRectangle)
+            {
+                jsConsole.writeLine("The point is in the cirlce and in the rectangle");
+            }
+            if (!checkInCircle && checkInRectangle)
+            {
+                jsConsole.writeLine("The point is not in the cirlce and in the rectangle");
+            }
+            if (checkInCircle && !checkInRectangle)
+            {
+                jsConsole.writeLine("The point is in the cirlce and not in the rectangle");
+            }
+            if (!checkInCircle && !checkInRectangle)
+            {
+                jsConsole.writeLine("The point is not in the cirlce and not in the rectangle");
+            }
+        }
+	</script>
+</body>
+</html>

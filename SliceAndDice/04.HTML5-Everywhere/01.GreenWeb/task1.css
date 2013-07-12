@@ -1,0 +1,21 @@
+﻿#wrapper{
+  width: 960px;
+  border: 1px solid #000;
+  margin: 0 auto;
+}
+
+p{
+  display: none;
+}
+
+@media only screen and (max-width: 960px) {
+    #wrapper {
+        width: 768px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #wrapper {
+        width: 480px;
+    }
+}

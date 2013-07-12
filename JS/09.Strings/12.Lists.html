@@ -1,0 +1,56 @@
+﻿<html>
+<head>
+    <title>12.Lists</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+
+        <p>
+            Write a function that creates a HTML UL using a template for every HTML LI. The source of the list should an array of elements.
+            Replace all placeholders marked with –{…}–   with the value of the corresponding property of the object.
+        </p>
+        <br />
+        <input type="submit" value="Show result" onclick="ShowResult()" />
+    </fieldset>
+
+    <div id="js-console">
+        <div>Template</div>
+        <div data-type="template" id="list-item">
+            <strong>-{name}-</strong> <span>-{age}-</span>
+        </div>
+        <div id="result"></div>
+    </div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        function generateList(array, template) {
+            var result = "<ul>";
+
+            for (var element = 0; element < array.length; element++) {
+                placeholdersAndTags = template.replace(/-{.*?}-/i, array[element].name).replace(/-{.*?}-/i, array[element].age);
+                result += "<li>" + placeholdersAndTags + "</li>";
+            }
+
+            result += "</ul>";
+            return result;
+        }
+
+
+        var people =
+        [
+            { name: "Goshko", age: 1 },
+            { name: "Toshko", age: 2 },
+            { name: "Matrioshko", age: 3 },
+            { name: "Boshko", age: 5 }
+        ];
+
+        var template = document.getElementById("list-item").innerHTML;
+        var peopleList = generateList(people, template);
+
+        function ShowResult() {
+            document.getElementById("result").innerHTML = peopleList;
+        }
+    </script>
+</body>
+</html>

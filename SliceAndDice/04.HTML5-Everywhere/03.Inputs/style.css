@@ -1,0 +1,23 @@
+div, input, label, fieldset, form, tr, td
+{
+    margin: 0;
+    padding: 0;
+}
+#wrapper
+{
+    width: 960px;
+    margin: 0 auto;
+}
+table
+{
+    margin: 0 auto;
+}
+    table tr td
+    {
+        border: 1px solid #ddd;
+    }
+input
+{
+    width: 130px;
+    padding: 5px;
+}

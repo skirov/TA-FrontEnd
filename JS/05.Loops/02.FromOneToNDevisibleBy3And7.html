@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>02.FromOneToNDevisibleBy3And7</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        <label for="number">Number</label>
+        <input type="text" id="number" />
+        <br />
+        <input type="submit" value="Show numbers" onclick="FromOneToNDevisibleBy3And7()" />
+        
+    </fieldset>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    
+	<script>
+        function FromOneToNDevisibleBy3And7()
+        {
+            var number = document.getElementById("number").value;
+            
+            jsConsole.writeLine("Numbers devisible by 3 and 7 at the same time: ");
+            
+            for(var i=1; i<=number; i++)
+            {
+                if(i % 3 == 0 && i % 7 == 0)
+                {
+                    jsConsole.writeLine(i);
+                }
+            }
+        }
+	</script>
+</body>
+</html>

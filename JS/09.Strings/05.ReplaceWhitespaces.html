@@ -1,0 +1,25 @@
+﻿<html>
+<head>
+    <title>05.ReplaceWhitespaces</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+
+        <p id="text">Write a function that replaces non breaking white-spaces in a text with & nbsp;</p>
+        <p>I'm replacing it with 'nbsp' because there will be no visible result.</p>
+        <br />
+        <input type="submit" value="Replace" onclick="ShowResult()" />
+    </fieldset>
+
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function ShowResult() {
+            var text = document.getElementById("text").innerText;
+            var replaced = text.replace(/\s/g, "'nbsp'");
+            jsConsole.writeLine(replaced);
+        }
+    </script>
+</body>
+</html>

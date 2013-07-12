@@ -1,0 +1,46 @@
+﻿<html>
+<head>
+    <title>10.FindPalindromes</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+
+        <p>Write a program that extracts from a given text all palindromes, e.g. "ABBA", "lamal", "exe".</p>
+        <p id="text">john@doe.com aBBa text@datatext "&@ exe . lamal andAnotherMail@me.com</p>
+        <br />
+        <input type="submit" value="Show result" onclick="ShowResult()" />
+    </fieldset>
+
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        function IsPalindrome(word) {
+            var isPalidrome = true;
+			for (var i = 0; i < word.length / 2; i++)
+			{
+				if (word[i] != word[word.length - i - 1])
+				{
+					isPalidrome = false;
+				}
+			}
+			return isPalidrome;
+        }
+
+        function ShowResult() {
+            var text = document.getElementById("text").innerText;
+
+			var words = text.split(/[.-\s,]/gi);
+
+			for(var i = 0; i < words.length; i++)
+			{
+				if (IsPalindrome(words[i].trim()) && words[i] != null && words[i] != "")
+				{
+					jsConsole.writeLine(words[i]);
+				}
+			}
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+<head>
+	<title>01.ExchangeIfGreater</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        
+        <label for="x">X</label>
+        <input type="text" id="x" />
+        <br />
+        <label for="y">Y</label>
+        <input type="text" id="y" />
+        <br />
+        <input type="submit" value="Exchange" onclick="ExchangeIfGreater()" />
+        
+    </fieldset>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    
+	<script>
+        function ExchangeIfGreater()
+        {
+            var x = document.getElementById("x").value;
+            var y = document.getElementById("y").value;
+            var tmp;
+            
+            if(x > y)
+            {
+                tmp = x;
+                x = y;
+                y = tmp;
+                jsConsole.writeLine("Values are exchanged");
+                jsConsole.writeLine("X = " + x);
+                jsConsole.writeLine("Y = " + y);
+            }
+            else
+            {
+                jsConsole.writeLine("First number is smaller or equal then the second, so no exchange needed.");
+            }
+        }
+	</script>
+</body>
+</html>

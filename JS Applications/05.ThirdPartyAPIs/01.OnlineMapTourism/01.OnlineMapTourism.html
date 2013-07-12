@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Online Map Tourism</title>
+    <style>
+        body
+        {
+            width: 1300px;
+        }
+
+        html, #map-canvas
+        {
+            margin: 0;
+            padding: 0;
+            height: 600px;
+            width: 100%;
+        }
+
+        a
+        {
+            margin-left: 15px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+</head>
+<body>
+    <div>
+        <button id="prev">Previous</button>
+        <button id="next">Next</button>
+    </div>
+    <div id="cities">
+    </div>
+    <div id="map-canvas"></div>
+    <script src="map.js"></script>
+</body>
+</html>

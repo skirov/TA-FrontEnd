@@ -1,0 +1,58 @@
+<html>
+<head>
+	<title>02.CompareCharArrays</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        Compare two char arrays lexicographically (letter by letter).
+        <br />
+        <input type="submit" value="CompareArrays" onclick="CompareCharArrays()" />
+        
+    </fieldset>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    
+	<script>
+        var array1 = ['a', 'b', 'c', 'd'];
+        var array2 = ['a', 'c', 'd', 'd'];
+        
+        //print first array
+        jsConsole.writeLine("Print first array");
+        for (var i = 0; i < array1.length; i++)
+        {
+            jsConsole.writeLine(array1[i]);
+        }
+        
+        //print second array
+        jsConsole.writeLine("Print second array");
+        for (var i = 0; i < array2.length; i++)
+        {
+            jsConsole.writeLine(array2[i]);
+        }
+        
+        jsConsole.writeLine();
+        
+        jsConsole.writeLine("Comparison");
+        
+        function CompareCharArrays()
+        {
+            for (var i = 0; i < array1.length; i++)
+            {
+                if (array1[i] > array2[i])
+                {
+                    jsConsole.writeLine(array1[i] + " is after " + array2[i]);
+                }
+                else if (array1[i] < array2[i])
+                {
+                    jsConsole.writeLine(array1[i] + " is before " + array2[i]);
+                }
+                else
+                {
+                    jsConsole.writeLine(array1[i] + " equals " + array2[i]);
+                }
+            }
+        }
+	</script>
+</body>
+</html>

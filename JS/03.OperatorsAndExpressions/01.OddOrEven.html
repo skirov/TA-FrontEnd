@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>01.OddOrEven</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        
+        <label for="number">Enter a number</label>
+        <input type="text" id="number" />
+        <br />
+        <input type="submit" value="Odd or Even?" onclick="OddOrEven()" />
+        
+    </fieldset>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    
+	<script>
+        function OddOrEven()
+        {
+            var input = document.getElementById("number").value;
+            
+            if(input % 2 == 1)
+            {
+                jsConsole.writeLine(input + " is an odd number");
+            }
+            else
+            {
+                jsConsole.writeLine(input + " is an even number");
+            }
+        }
+	</script>
+</body>
+</html>

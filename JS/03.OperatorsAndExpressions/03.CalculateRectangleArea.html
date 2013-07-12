@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>03.CalculateRectangleArea</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+        <fieldset id="inputs">
+            
+            <label for="width">Width</label>
+                <input type="text" id="width" />
+            <br />
+            <label for="height">Height</label>
+                <input type="text" id="height" />
+            <br />
+                <input type="submit" value="Calculate Rectangle Area" onclick="CalculateRectangleArea()" />
+            
+        </fieldset>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    
+	<script>
+        function CalculateRectangleArea()
+        {
+            var width = document.getElementById("width").value;
+            var height = document.getElementById("height").value;
+            
+            jsConsole.writeLine("Rectangle's area = " + (width*height));
+        }
+	</script>
+</body>
+</html>

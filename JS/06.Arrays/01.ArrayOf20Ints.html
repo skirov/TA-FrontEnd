@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>01.ArrayOf20Ints</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        <p>Array of 20 integers and initializes each element by its index multiplied by 5</p>
+        <input type="submit" value="Show numbers" onclick="ArrayOf20Ints()" />
+    </fieldset>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    
+	<script>
+        function ArrayOf20Ints()
+        {
+            var array = new Array(20);
+            
+            for(var i=0; i < array.length; i++)
+            {
+                array[i] = i*5;
+            }
+            
+            for(var i=0; i < array.length; i++)
+            {
+                jsConsole.writeLine(array[i]);
+            }
+        }
+	</script>
+</body>
+</html>

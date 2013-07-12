@@ -1,0 +1,43 @@
+<html>
+<head>
+	<title>07.IsPrime</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        
+        <label for="number">Enter a number = </label>
+        <input type="text" id="number" />
+        <br />
+        <input type="submit" value="Is the number prime?" onclick="IsPrime()" />
+        
+    </fieldset>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    
+	<script>
+        function IsPrime()
+        {
+            var number = parseInt(document.getElementById("number").value);
+            var prime = true;
+            for (var i = 2; i <= Math.sqrt(number); i++)
+            {
+                if (number % i == 0)
+                {
+                    prime = false;
+                    break;
+                }
+            }
+            
+            if(prime)
+            {
+                jsConsole.writeLine("The number <strong>is prime</strong>");
+            }
+            else
+            {
+                jsConsole.writeLine("The number is <strong>not prime</strong>");
+            }
+        }
+	</script>
+</body>
+</html>

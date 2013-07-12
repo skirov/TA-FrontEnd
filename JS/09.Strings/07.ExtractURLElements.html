@@ -1,0 +1,43 @@
+﻿<html>
+<head>
+    <title>07.ExtractURLElements</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+
+        <p>
+            Write a script that parses an URL address given in the format:
+
+		    and extracts from it the [protocol], [server] and [resource] elements. Return the elements in a JSON object.
+           For example from the URL http://www.devbg.org/forum/index.php the following information should be extracted
+        </p>
+        <br />
+        <input type="submit" value="Show result" onclick="ShowResult()" />
+    </fieldset>
+
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        function GetContent(url) {
+            var elements = new RegExp("([\da-z_\.-]+)", "gi");
+            return url.match(elements);
+        }
+
+        function ShowResult() {
+            var url = "http://www.devbg.org/forum/index.php";
+            var urlElements = GetContent(url);
+
+            jsConsole.writeLine("[protocol] -> " + urlElements[0]);
+            jsConsole.writeLine("[server] -> " + urlElements[1]);
+
+            jsConsole.write("[resource] -> ");
+            for (var i = 2; i < urlElements.length; i++)
+            {
+                jsConsole.write("/" + urlElements[i]);
+            }
+        }
+    </script>
+</body>
+</html>

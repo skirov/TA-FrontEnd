@@ -1,0 +1,65 @@
+<html>
+<head>
+	<title>04.Order3Numbers</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        
+        <label for="x">X</label>
+        <input type="text" id="x" />
+        <br />
+        <label for="y">Y</label>
+        <input type="text" id="y" />
+        <br />
+        <label for="z">Z</label>
+        <input type="text" id="z" />
+        <br />
+        <input type="submit" value="Order3Numbers" onclick="Order3Numbers()" />
+        
+    </fieldset>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    
+	<script>
+        function Order3Numbers()
+        {
+            var x = document.getElementById("x").value;
+            var y = document.getElementById("y").value;
+            var z = document.getElementById("z").value;
+            
+            var tmp;
+            
+            for (i = 0; i < 2; i++)
+            {
+                if (x < y)
+                {
+                    tmp = y;
+                    y = x;
+                    x = tmp;
+                    if (x < z)
+                    {
+                        tmp = z;
+                        z = x;
+                        x = tmp;
+                    }
+                }
+                else
+                {
+                    if (y < z)
+                    {
+                        tmp = z;
+                        z = y;
+                        y = tmp;
+                    }
+                }
+            }
+
+			var orderedDesc = "The descending order of tree values is " + x + ", " + y + ", " + z;
+
+			jsConsole.writeLine(orderedDesc);
+
+		}	
+	</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>03.ConsoleModule</title>
+</head>
+<body>
+    <h2>The result is in the js console.</h2>
+
+    <script src="vehicles.js"></script>
+
+    <script>
+        var propellers = [
+    new vehicles.Propeller(5, vehicles.finRotationDirection.ClockWise)
+        ];
+
+        var propellerNozzles = [
+            new vehicles.PropellerNozzle(100, vehicles.afterBurnersState.Off)
+        ];
+
+        var wheels = [
+            new vehicles.Wheel(0.25), //radius is in meters
+            new vehicles.Wheel(0.25),
+            new vehicles.Wheel(0.25),
+            new vehicles.Wheel(0.25)
+        ];
+
+        var unit = "km/h";
+
+        //A land vehicle demo before and after acceleration - e.g. truck
+        var truck = new vehicles.LandVehicle(140, wheels);
+        console.log("Truck current speed - " + truck.speed + unit);
+        truck.accelerate();
+        console.log("Truck speed after acceleration - " + truck.speed + unit);
+        console.log("\r\n");
+
+        //An air vehicle demo before and after acceleration - e.g. plane
+        var plane = new vehicles.AirVehicle(600, propellerNozzles);
+        console.log("Plane current speed - " + plane.speed + unit);
+        plane.accelerate();
+        console.log("Plane speed after acceleration with after burners turned off - " + plane.speed + unit);
+        plane.switchAfterBurners(vehicles.afterBurnersState.On);
+        plane.accelerate();
+        console.log("Plane speed after acceleration with after burners turned on - " + plane.speed + unit);
+        console.log("\r\n");
+
+        //A water vehicle demo before and after acceleration - e.g. boat
+        var boat = new vehicles.WaterVehicle(60, propellers);
+        console.log("Boat current speed - " + boat.speed + unit);
+        boat.accelerate();
+        console.log("Boat speed after acceleration with clockwise propeller rotation - " + boat.speed + unit);
+        boat.switchSpinDirection(vehicles.finRotationDirection.CounterClockWise)
+        boat.accelerate();
+        console.log("Boat speed after acceleration with counter-clockwise propeller rotation - " + boat.speed + unit);
+        console.log("\r\n");
+
+        //A amphibian vehicle demo before and after acceleration and with switched terrain modes and propeller rotation
+        var amphibia = new vehicles.Amphibia(vehicles.amphibiaTerrainMode.Land, 120, wheels);
+        console.log("Amphibian current speed on land - " + amphibia.speed + unit);
+        amphibia.accelerate();
+        console.log("Amphibian speed after acceleration on land - " + amphibia.speed + unit);
+        amphibia.terrainMode = vehicles.amphibiaTerrainMode.Water;
+        amphibia.propultionUnits = propellers;
+        amphibia.switchTerrain();
+        amphibia.accelerate();
+        console.log("Amphibian current speed on water with counter-clockwise propeller rotation - " + amphibia.speed + unit);
+        amphibia.switchSpinDirection(vehicles.finRotationDirection.ClockWise)
+        amphibia.accelerate();
+        console.log("Amphibian speed after acceleration on water with clockwise propeller rotation - " + amphibia.speed + unit);
+        console.log("\r\n");
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<html>
+<head>
+	<title>06.QuadraticEquation</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        
+        <label for="a">a</label>
+        <input type="text" id="a" />
+        <br />
+        <label for="b">b</label>
+        <input type="text" id="b" />
+        <br />
+        <label for="c">c</label>
+        <input type="text" id="c" />
+        <br />
+        <input type="submit" value="QuadraticEquation" onclick="QuadraticEquation()" />
+        
+    </fieldset>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    
+	<script>
+        function QuadraticEquation()
+        {
+            var a = parseInt(document.getElementById("a").value);
+            var b = parseInt(document.getElementById("b").value);
+            var c = parseInt(document.getElementById("c").value);
+            
+            var x;
+            var x1;
+            var x2;
+            
+            var D = b * b - 4 * a * c;
+            
+            if (a == 0)
+            {
+                jsConsole.writeLine("One real root - x1: " + (-c / b));
+            }
+            else if (D > 0)
+            {
+                x1 = (-b + Math.sqrt(D)) / (2 * a);
+                x2 = (-b - Math.sqrt(D)) / (2 * a);
+                jsConsole.writeLine("x1 = " + x1);
+                jsConsole.writeLine("x2 = " + x2);
+            }
+            else if (D < 0)
+            {
+                jsConsole.writeLine("No real solution");
+            }
+            else if (D == 0)
+            {
+                x = -b / (2 * a);
+                jsConsole.writeLine("x = " + x);
+            }
+
+		}	
+	</script>
+</body>
+</html>

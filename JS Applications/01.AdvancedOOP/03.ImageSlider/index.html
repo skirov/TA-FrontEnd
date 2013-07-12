@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Image slider</title>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    
+    <div id="container">
+        <div id="slider">
+            <div id="bigImage">
+            </div>
+
+            <ul id="imagesList">
+                
+            </ul>
+            <span href="#" id="prev">Prev</span> | 
+            <span href="#" id="next">Next</span>
+        </div>
+    </div>
+
+    <script src ="scripts/slider.js"></script>
+
+    <script>
+        var image1 = Object.create(Image);
+        var image2 = Object.create(Image);
+        var image3 = Object.create(Image);
+
+        image1.init("images/1_thumb.jpg", "images/1.jpg", "1");
+        image2.init("images/2_thumb.jpg", "images/2.jpg", "2");
+        image3.init("images/1_thumb.jpg", "images/1.jpg", "3");
+
+
+        var images =
+            [
+                image1,
+                image2,
+                image3
+            ]
+        
+        var slider = Object.create(Slider);
+
+        //alternative way of adding images
+        //slider.addImage(image1);
+        //slider.addImage(image2);
+        //slider.addImage(image3);
+
+        slider.init(images);
+    </script>
+</body>
+</html>

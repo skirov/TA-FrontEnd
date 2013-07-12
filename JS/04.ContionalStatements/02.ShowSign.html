@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title>02.ShowSign</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        
+        <label for="x">X</label>
+        <input type="text" id="x" />
+        <br />
+        <label for="y">Y</label>
+        <input type="text" id="y" />
+        <br />
+        <label for="z">Z</label>
+        <input type="text" id="z" />
+        <br />
+        <input type="submit" value="ShowSign" onclick="ShowSign()" />
+        
+    </fieldset>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    
+	<script>
+        function ShowSign()
+        {
+            var x = document.getElementById("x").value;
+            var y = document.getElementById("y").value;
+            var z = document.getElementById("z").value;
+            
+            var countZeros = 0;
+            
+            if(x < 0)
+            {
+                countZeros++;
+            }
+            if(y < 0)
+            {
+                countZeros++;
+            }
+            if(z < 0)
+            {
+                countZeros++;
+            }
+            
+            if(countZeros % 2 == 1)
+            {
+                jsConsole.writeLine("The sign of the product is \"-\"");
+            }
+            else
+            {
+                jsConsole.writeLine("The sign of the product is \"+\"");
+            }
+        }
+	</script>
+</body>
+</html>

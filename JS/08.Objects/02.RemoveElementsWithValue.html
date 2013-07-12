@@ -1,0 +1,49 @@
+﻿<html>
+<head>
+	<title>02.RemoveElementsWithValue</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        
+        <p>Write a function that removes all elements with a given value</p>
+        
+    </fieldset>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+
+	    Array.prototype.Remove = function (element) {
+
+	        var array = new Array();
+
+	        for (var i in this) {
+
+	            if (this[i] != element) {
+	                array.push(this[i]);
+	            }
+
+	        }
+
+	        return array;
+	    }
+
+	    var array = [52, 63, 47, 1, 6, 1, 6, 2, 1];
+
+	    jsConsole.write("Elements in old array: ");
+	    for (var i = 0; i < array.length; i++) {
+	        jsConsole.write(array[i] + " ");
+	    }
+
+	    var newArray = array.Remove(6);
+
+	    jsConsole.writeLine();
+
+	    jsConsole.write("Elements in new array: ");
+	    for (var i = 0; i < newArray.length-1; i++) {
+	        jsConsole.write(newArray[i] + " ");
+	    }
+	    
+	</script>
+</body>
+</html>

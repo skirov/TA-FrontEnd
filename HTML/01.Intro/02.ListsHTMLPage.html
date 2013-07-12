@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Lots of lists, bro!</title>
+	</head>
+	<body>
+		<!--It won't validate because type is depricated. I must use CSS.-->
+		<div>
+			Preceding text:
+			<ol type="I">
+				<li>
+					List item 1
+				</li>
+				<ol type="a">
+					<li>
+						Nested Item 1.1
+					</li>
+					<li>
+						Nested Item 1.2
+					</li>
+				</ol>
+				<li>
+					List item 2
+				</li>
+				<ol type="1">
+					<li>Nested Item 2.1</li>
+					<li>Nested Item 2.2</li>
+					<ul type="circle">
+						<li>Nested Item 2.2.1</li>
+						<li>Nested Item 2.2.2</li>
+						<ul type="square">
+							<li>Nested Item 2.2.1.1</li>
+							<li>Nested Item 2.2.1.2</li>
+						</ul>
+						<li>Nested Item 2.2.3</li>
+					</ul>
+					<li>Nested Item 2.3</li>
+				</ol>
+				<li>List item 3</li>
+				<ul type="disc">
+					<li>Nested Item 3.1</li>
+					<li>Nested Item 3.2</li>
+					<li>Nested Item 3.3</li>
+				</ul>
+			</ol>
+		</div>
+	</body>
+</html>

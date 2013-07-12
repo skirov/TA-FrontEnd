@@ -1,0 +1,56 @@
+<html>
+<head>
+	<title>02.ShowSign</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        
+        <label for="x">X</label>
+        <input type="text" id="x" />
+        <br />
+        <label for="y">Y</label>
+        <input type="text" id="y" />
+        <br />
+        <label for="z">Z</label>
+        <input type="text" id="z" />
+        <br />
+        <input type="submit" value="ShowSign" onclick="ShowSign()" />
+        
+    </fieldset>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    
+	<script>
+        function ShowSign()
+        {
+            var x = document.getElementById("x").value;
+            var y = document.getElementById("y").value;
+            var z = document.getElementById("z").value;
+            
+            if(x > y)
+            {
+                if(x > z)
+                {
+                    jsConsole.writeLine(x + " is the biggest number");
+                }
+                else
+                {
+                    jsConsole.writeLine(z + " is the biggest number");
+                }
+            }
+            else
+            {
+                if(y > z)
+                {
+                    jsConsole.writeLine(y + " is the biggest number");
+                }
+                else
+                {
+                    jsConsole.writeLine(z + " is the biggest number");
+                }
+            }
+        }
+	</script>
+</body>
+</html>

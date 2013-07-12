@@ -1,0 +1,70 @@
+<html>
+<head>
+	<title>07.BiggestOfFive</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        
+        <label for="number">Number</label>
+        <input type="text" id="number" />
+        <br />
+        <input type="submit" value="NumberInWords" onclick="NumberInWords()" />
+        
+    </fieldset>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    
+	<script>
+        function DigitsInArray(number)
+        {
+            var array = [0,0,0];
+    
+            for (var i = 0; i < 3; i++)
+            {
+                array[i] = parseInt(number % 10); //If the number is 192, it takes the '2'
+                number /= 10; //The number becomes 19
+            }
+            
+            array.reverse(); //We must revese the array in order for it to be 192, not 291
+            return array;
+        }
+        
+        function NumberInWords()
+        {            
+            
+            var number = parseInt(document.getElementById("number").value);
+    
+            if (number == 0)
+            {
+                jsConsole.writeLine("zero");
+                return;
+            }
+    
+            var ones = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+            var tens = ["", "ten", "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+            var special = ["", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+    
+            var digitPosition = DigitsInArray(number);
+    
+            if (digitPosition[0] != 0 && digitPosition[1] != 1)
+            {
+                jsConsole.writeLine(ones[digitPosition[0]] + " hundred and " + tens[digitPosition[1]] + " " + ones[digitPosition[2]]);
+            }
+            else if (digitPosition[0] != 0 && digitPosition[1] == 1)
+            {
+                jsConsole.writeLine(ones[digitPosition[0]] + " hundred and " + special[digitPosition[2]]);
+            }
+            else if (digitPosition[0] == 0 && digitPosition[1] == 1)
+            {
+                jsConsole.writeLine(special[digitPosition[2]]);
+            }
+            else if (digitPosition[0] == 0 && digitPosition[1] == 0 && digitPosition[2] != 0)
+            {
+                jsConsole.writeLine(ones[digitPosition[2]]);
+            }
+    
+		}	
+	</script>
+</body>
+</html>

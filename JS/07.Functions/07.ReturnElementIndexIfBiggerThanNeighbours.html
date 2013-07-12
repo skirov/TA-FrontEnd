@@ -1,0 +1,59 @@
+﻿<html>
+<head>
+	<title>07.ReturnElementIndexIfBiggerThanNeighbours</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        <p>Array of numbers - 0, 3, 4, 4, 4, 2, 5, 8, 6, 7, 4, 5, 8, 9, 2, 1, 8, 9, 5</p>
+
+        <br />
+        <input type="submit" value="Return first index if bigger than neighbours" onclick="ShowResults()" />
+        
+    </fieldset>
+
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    
+	<script>
+	    var array = [0, 3, 4, 4, 4, 2, 5, 8, 6, 7, 4, 5, 8, 9, 2, 1, 8, 9, 5];
+
+	    function CheckIfElementNeighboursAreSmaller(elementPosition) {
+
+	        var biggerThanNeighbours;
+
+	        if (elementPosition == array.length - 1) {
+	            biggerThanNeighbours = array[elementPosition] > array[array.length - 2] ? true : false;
+	        }
+
+	        if (elementPosition == 0) {
+	            biggerThanNeighbours = array[elementPosition] > array[1] ? true : false;
+	        }
+
+	        if (elementPosition != array.length - 1 && elementPosition != 0) {
+	            biggerThanNeighbours = array[elementPosition] > array[elementPosition + 1] && array[elementPosition] > array[elementPosition - 1] ? true : false;
+	        }
+
+	        return biggerThanNeighbours;
+	    }
+
+	    function ShowResults() {
+	        var isBigger;
+
+	        for (var i = 0; i < array.length; i++) {
+	            if (CheckIfElementNeighboursAreSmaller(i)==true) {
+	                //The index of the first element in array that is bigger than its neighbors
+	                jsConsole.writeLine(i);
+	                isBigger = true;
+	                break;
+	            }
+	        }
+
+	        if (!isBigger) {
+	            jsConsole.writeLine("-1");
+	        }
+	    }
+
+	</script>
+</body>
+</html>

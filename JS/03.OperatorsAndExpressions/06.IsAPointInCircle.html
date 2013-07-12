@@ -1,0 +1,44 @@
+<html>
+<head>
+	<title>06.IsAPointInCircle</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        
+        <label for="x">X = </label>
+        <input type="text" id="x" />
+        <br />
+        
+        <label for="y">Y = </label>
+        <input type="text" id="y" />
+        <br />
+        
+        <label for="radius">Radius = </label>
+        <input type="text" id="radius" />
+        <br />
+        <input type="submit" value="Is the point in a circle?" onclick="InCircle()" />
+        
+    </fieldset>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    
+	<script>
+        function InCircle()
+        {
+            var x = document.getElementById("x").value;
+            var y = document.getElementById("y").value;
+            var radius = document.getElementById("radius").value;
+            
+            if ((x * x) + (y * y) <= (radius * radius))
+            {
+                jsConsole.writeLine("The point is inside the circle");
+            }
+            else
+            {
+                jsConsole.writeLine("The point is outside the circle");
+            }
+        }
+	</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+section{
+	background-color: #eee;
+	border-radius: 5px;
+	width: 35%;
+	padding: .1% 1% 1% 1%;
+}
+article{
+	font-family: Arial, Helvetica, sans-serif;
+	border: 2px solid #C3C3C3;
+	padding: 3%;
+	font-size: .9em;
+	margin-bottom: 3%;
+}
+article img{
+	border: 1px solid #C1BBB2;
+	float: left;
+	margin-right: 3%;
+}
+article p{
+	margin-top: 0;
+}
+article:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+header h3{
+	font-family: "Arial Narrow";
+	font-weight: normal;
+}
+div.buttons{
+	float: right;
+}
+button{
+	border: none;
+	color: #fff;
+	padding-left: 5%;
+}
+button.listen{
+	background-image: url('../images/listen.png');
+	width: 76px;
+	height: 25px;
+}
+button.add{
+	background-image: url('../images/add.png');
+	width: 63px;
+	height: 25px;
+}
+span.bold{
+	font-weight: bold;
+}

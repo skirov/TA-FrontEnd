@@ -1,0 +1,15 @@
+#wrapper{
+	width: 960px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#scoreBoard{
+	display: none;
+}
+
+#startGame{
+	position: absolute;
+	top: 0;
+	right: 0;
+}

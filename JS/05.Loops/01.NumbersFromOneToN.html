@@ -1,0 +1,29 @@
+<html>
+<head>
+	<title>01.NumbersFromOneToN</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        <label for="number">Number</label>
+        <input type="text" id="number" />
+        <br />
+        <input type="submit" value="Show numbers" onclick="NumbersFromOneToN()" />
+        
+    </fieldset>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    
+	<script>
+        function NumbersFromOneToN()
+        {
+            var number = document.getElementById("number").value;
+            
+            for(var i=1; i<=number; i++)
+            {
+                jsConsole.writeLine(i);
+            }
+        }
+	</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <p>The result is in the console.</p>
+    <script src ="scripts/SchoolRepository-prototypal.js"></script>
+
+    <!-- Classical OOP Example -->
+    <script>
+        var students = [];
+        
+        for (var i = 0; i < 4; i++) {
+            var student = Object.create(Student);
+            student.initialize("Kenny", "Is Dead", 10, 4);
+
+            students.push(student);
+        }
+
+        var formTeacher = Object.create(Teacher);
+        formTeacher.initialize("Ms.", "Garison", 32, "4th grade");
+
+        var classes = [];
+
+        for (var i = 1; i <= 2; i++) {
+            var clas = Object.create(Class);
+            clas.initialize(i+"th grade", 30, students, formTeacher);
+
+            classes.push(clas);
+        }
+
+        var school = Object.create(School);
+        school.initialize("South Park Elementary", "South park", classes);
+
+        localStorage.setObject(school.name, school);
+
+        var schoolFromStorage = localStorage.getObject(school.name);
+
+        for (var i = 0; i < schoolFromStorage.classes.length; i++) {
+            console.log("--- Introduce students in " + schoolFromStorage.classes[i].name + " class ---");
+            for (var j = 0; j < schoolFromStorage.classes[i].students.length; j++) {
+                console.log(school.classes[i].students[j].introduce());
+            }
+        }
+    </script>
+</body>
+</html>

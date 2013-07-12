@@ -1,0 +1,44 @@
+<html>
+<head>
+	<title>03.MaxAndMinNumberInSequence</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        <label for="numbers">Enter a sequence of numbers separated by space</label>
+        <input type="text" id="numbers" />
+        <br />
+        <input type="submit" value="Show numbers" onclick="MaxMinNumbers()" />
+        
+    </fieldset>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    
+	<script>
+        function MaxMinNumbers()
+        {
+            var input = document.getElementById("numbers").value;
+            var numbers = input.split(" ");
+            
+            var maxNumber = numbers[0];
+            var minNumber = numbers[0];
+            
+            for(var i=0; i<numbers.length; i++)
+            {
+                if(numbers[i] < minNumber)
+                {
+                    minNumber = numbers[i];
+                }
+                
+                if(numbers[i] > maxNumber)
+                {
+                    maxNumber = numbers[i];
+                }
+            }
+            
+            jsConsole.writeLine("Biggest number in sequence: " + maxNumber);            
+            jsConsole.writeLine("Smallest number in sequence: " + minNumber);
+        }
+	</script>
+</body>
+</html>

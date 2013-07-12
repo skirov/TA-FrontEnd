@@ -1,0 +1,39 @@
+﻿<html>
+<head>
+    <title>03.CheckSubstringOccurence</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+
+        <p>Write a JavaScript function that finds how many times a substring is contained in a given text (perform case insensitive search).</p>
+        <p id="text">We are living in an yellow submarine. We don't have anything else. Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days.</p>
+        <span>Enter a word to search</span>
+        <input type="text" id="wordToSearch" />
+        <br />
+        <input type="submit" value="Reverse word" onclick="ShowResult()" />
+    </fieldset>
+
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function ShowResult() {
+            var input = document.getElementById("text").innerHTML;
+            var substring = document.getElementById("wordToSearch").value;
+            var result = CheckSubstringOccurence(input, substring);
+            jsConsole.writeLine(result);
+        }
+
+        function CheckSubstringOccurence(text, substring) {
+            var substringToSearch = String(substring);
+            var regex = new RegExp(substringToSearch,"gi");
+            var result = text.match(regex);
+
+            if (result === null) {
+                return 0;
+            }
+            return result.length;
+        }
+    </script>
+</body>
+</html>

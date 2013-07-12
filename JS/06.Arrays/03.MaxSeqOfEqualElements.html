@@ -1,0 +1,61 @@
+<html>
+<head>
+	<title>03.MaxAndMinNumberInSequence</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        <p>Maximal sequence of equal elements in an array.</p>
+        <br />
+        <input type="submit" value="Show numbers" onclick="MaxSeq()" />
+        
+    </fieldset>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    
+	<script>
+        
+        var array = [ 2, 1, 1, 2, 3, 3,3, 3, 2, 2, 2 ];
+    
+        //print first array
+        jsConsole.writeLine("Print the array");
+        for (var i = 0; i < array.length; i++)
+        {
+            jsConsole.write(array[i] + " ");
+        }
+            
+        function MaxSeq()
+        {
+
+            var bestSequence = 1;
+            var currentSequence = 1;
+            var bestNumber = 0;
+            
+            jsConsole.writeLine();
+            
+            for (var i = 0; i < array.length - 1; i++)
+            {
+                if (array[i] == array[i + 1])
+                {
+                    currentSequence++;
+                }
+                else
+                {
+                    currentSequence = 1;
+                }
+                if (currentSequence >= bestSequence)
+                {
+                    bestSequence = currentSequence;
+                    bestNumber = array[i];
+                }
+            }
+    
+            jsConsole.writeLine("Best sequence:");
+            for (var i = 0; i < bestSequence; i++)
+            {
+                jsConsole.write(bestNumber + " ");
+            }
+        }
+	</script>
+</body>
+</html>

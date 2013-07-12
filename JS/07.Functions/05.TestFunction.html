@@ -1,0 +1,54 @@
+﻿<html>
+<head>
+	<title>05.TestFunction</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        <p>Array of numbers - 4, 7, 3, 1, 9, 4, 2, 5, 8, 6, 7, 4, 5, 8, 9, 2, 1, 8, 9, 5</p>
+
+        <input type="submit" value="Show Number Occurences" onclick="TestFunction()" />
+        
+    </fieldset>
+
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    
+	<script>
+	    var array = [4, 7, 3, 1, 9, 4, 2, 5, 8, 6, 7, 4, 5, 8, 9, 2, 1, 8, 9, 5];
+
+	    function NumberOccurences(number) {
+	        var count = 0;
+
+	        for (var i = 0; i < array.length; i++) {
+	            if (array[i] == number) {
+	                count++;
+	            }
+	        }
+
+	        if (count>0) {
+	            return count;
+	        }
+	        else {
+	            return "No such number in array";
+	        }
+	    }
+
+	    function TestFunction() {
+
+	        for (var i = 0; i < 10; i++) {
+                
+	            var randomNumber = getRandomInt(0, 15);
+
+	            jsConsole.writeLine("Test result with number "+ randomNumber +" - " + NumberOccurences(randomNumber));
+    
+	        }
+	    }
+
+	    function getRandomInt (min, max) {
+	        return Math.floor(Math.random() * (max - min + 1)) + min;
+	    }
+
+	</script>
+</body>
+</html>

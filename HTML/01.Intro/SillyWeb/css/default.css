@@ -1,0 +1,23 @@
+body{
+	background-color: #ccecff;
+	color: #0d2d54;
+}
+a{
+	color: #3f80cf;
+}
+h1{
+	font-style: italic;
+}
+ul.nav li{
+	list-style: none;
+	display: inline;
+	margin-left: 40px;
+}
+dt{
+	font-style: italic;
+	font-weight: bold;
+}
+#info p{
+	margin: 0 0 0 15px;
+	font-style: italic;
+}

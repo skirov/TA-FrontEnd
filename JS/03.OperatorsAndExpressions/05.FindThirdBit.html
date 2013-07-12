@@ -1,0 +1,29 @@
+<html>
+<head>
+	<title>05.FindThirdBit</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+        <fieldset id="inputs">
+            
+            <label for="width">Enter a number</label>
+                <input type="text" id="number" />
+            <br />
+                <input type="submit" value="Get third bit" onclick="GetThirdBit()" />
+            
+        </fieldset>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    
+	<script>
+        function GetThirdBit()
+        {
+            var number = document.getElementById("number").value;
+            
+            var thirdBit = parseInt(number);
+            
+            jsConsole.writeLine("The third bit is <strong>"+ ((thirdBit >> 3) & 1) +"</strong>");
+        }
+	</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿.js-console {
+  margin: 0;
+}
+body .js-console {
+  margin: 0 auto;
+  padding: 5px 10px;
+  background-color: #d3e3f9;
+  border: 1px solid #5EA7FF;
+  width: 800px;
+  height: 500px;
+  font-family: Consolas;
+  font-size: 18px;
+  color: #337fda;
+  overflow-x: hidden;
+  word-break: break-all;
+}
+body .js-console > p {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: block;
+}
+body .js-console > p > span {
+  margin: 0;
+  padding: 0;
+}
+body .js-console > p > br {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+/*Added styles*/
+#inputs{
+    border-radius: 3px;
+    font-family: Arial;
+    color: #444;
+    border-top: 1px solid #5EA7FF;
+    border-left: 1px solid #5EA7FF;
+    border-right: 1px solid #5EA7FF;
+    border-bottom: 1px solid #e3ecf7;
+    width: 805px;
+    margin: 0 auto;
+    padding: 5px;
+    text-align: center;
+    background-color: #e3ecf7;
+}
+input{
+    margin-top: 5px;
+    color: #444;
+    border: 1px solid #5EA7FF;
+    padding: 5px;
+    outline: none;
+}
+input:hover, input:focus{
+    background: #b6d5ff;
+}

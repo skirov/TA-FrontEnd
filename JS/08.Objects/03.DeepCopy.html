@@ -1,0 +1,35 @@
+﻿<html>
+<head>
+	<title>03.DeepCopy</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        
+        <p>Write a function that makes a deep copy of an object</p>
+        
+    </fieldset>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+
+	    function DeepCopy(object) {
+
+	        if (typeof (object) != "object") {
+	            return object;
+	        }
+
+	        else {
+
+	            var copyObject = new Object();
+	            for (var property in object) {
+	                copyObject[property] = copyMe(object[property]);
+	            }
+	            return copyObject;
+	        }
+
+	    }
+
+	</script>
+</body>
+</html>

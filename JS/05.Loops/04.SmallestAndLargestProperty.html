@@ -1,0 +1,47 @@
+<html>
+<head>
+	<title>04.SmallestAndLargestProperty</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        
+        <p>The biggest and smallest properties lexicographically in the document, window and navigator objects</p>
+        
+    </fieldset>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    
+	<script>
+        function findSmallestPropery(object) {
+            var smallest = 'zzz';
+            for (var property in object) {
+                if (property < smallest) {
+                    smallest = property;
+                }
+            }
+            jsConsole.writeLine("The smallest property lexicographically in " +object+ " is " +smallest);
+        }
+        
+        function findBiggesPropery(object) {
+            var biggest = 'a';
+            for (var property in object) {
+                if (property > biggest) {
+                    biggest = property;
+                }
+            }
+            jsConsole.writeLine("The biggest property lexicographically in " +object+ " is " +biggest);
+        }
+        
+        findSmallestPropery(document);
+        findSmallestPropery(window);
+        findSmallestPropery(navigator);
+        
+        jsConsole.writeLine();
+        
+        findBiggesPropery(document);
+        findBiggesPropery(window);
+        findBiggesPropery(navigator);
+	</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin: 10px;
+}
+.shadow
+{	
+    background: url("../images/shadow.png") no-repeat right bottom;
+}
+.shadow img
+{
+    zoom: .7;
+    display:block;
+    margin: -8px 7px 8px -9px;
+    padding: 0px;
+}

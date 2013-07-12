@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title>05.SelectionSort</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        <p>Selection sorted numbers.</p>
+        <br />
+        <input type="submit" value="Show numbers" onclick="SelectionSort()" />
+        
+    </fieldset>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    
+	<script>
+        
+        var array = [ 7, 2, 3, 4, 2, 2, 3 ];
+    
+        //print first array
+        jsConsole.writeLine("Print the array");
+        for (var i = 0; i < array.length; i++)
+        {
+            jsConsole.write(array[i] + " ");
+        }
+            
+        function SelectionSort()
+        {
+
+            
+            jsConsole.writeLine();
+            
+            for (var i = 0; i < array.length; i++)
+            {
+                var minElement = i;
+                var tmp = 0;
+                for (var j = i + 1; j < array.length; j++)
+                {
+                    if (array[j] < array[minElement])
+                    {
+                        minElement = j;
+                    }
+                }
+                tmp = array[i];
+                array[i] = array[minElement];
+                array[minElement] = tmp;
+            }
+    
+            jsConsole.writeLine("Sorted:");
+            for (var i = 0; i < array.length; i++)
+            {
+                jsConsole.write(array[i] + " ");
+            }
+        }
+	</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+ul, li, a {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    text-decoration: none;
+}
+
+ul li {
+    display: inline-block;
+    background-image: url(../images/menuBG.png);
+    background-repeat: repeat-x;
+    border: none;
+    height: 20px;
+    float: left;
+    padding: 15px 30px;
+}
+
+ul li:first-child, ul li:last-child {
+    background-repeat: no-repeat;
+    padding: 0;
+    width: 10px;
+    height: 50px;
+}
+
+ul li:first-child {
+    background-image: url(../images/buttonLeft.png);
+    background-position: left;
+}
+
+ul li:nth-child(2) {
+    padding-left: 20px;
+}
+
+ul li:last-child {
+    background-image: url(../images/buttonright.png);
+    background-position: right;
+}
+
+ul li.separator {
+    background-image: url(../images/buttonSeparator.png);
+    padding: 0;
+    width: 2px;
+    height: 50px;
+}
+
+ul li a {
+    color: #a7162e;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: .8em;
+    padding: 10px;
+}

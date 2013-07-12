@@ -1,0 +1,29 @@
+﻿<html>
+<head>
+    <title>06.ExtractHTMl</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+
+        <p>Write a function that extracts the content of a html page given as text. The function should return anything that is in a tag, without the tags</p>
+        <br />
+        <input type="submit" value="Show result" onclick="ShowResult()" />
+    </fieldset>
+
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        function GetContent(text) {
+            var content = new RegExp("[^<>]+(?=[<])", "gi");
+            return text.match(content);
+        }
+
+        function ShowResult() {
+            var text = document.body.innerHTML;
+            jsConsole.writeLine(GetContent(text));
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>04.TextareaColors</title>
+</head>
+<body>
+    <fieldset>
+        <legend>04.TextareaColors</legend>
+        <label for="color">Font color</label>
+        <input type="color" id="fontColor" /> <!--works only in Chrome-->
+
+        <br />
+
+        <label for="color">Backgorund color</label>
+        <input type="color" id="backgroundColor" /> <!--works only in Chrome-->
+
+        <br />
+
+        <input type="submit" value="Color the textarea" onclick="changeTextarea()" />
+    </fieldset>
+
+    <textarea rows="5" cols="25">Dummy text</textarea>
+    
+    <script src="script.js"></script>
+</body>
+</html>

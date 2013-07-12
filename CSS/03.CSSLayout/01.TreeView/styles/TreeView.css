@@ -1,0 +1,14 @@
+ul li{
+	list-style:none;
+}
+ul ul{
+	display: none;
+}
+ul li:hover ul{
+	display: block;
+	color: gray;
+}
+ul li span:hover{
+	cursor: pointer;
+	text-decoration: underline
+}

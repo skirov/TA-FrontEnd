@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>01.GenerateDivs</title>
+
+    <style type="text/css">
+        #divs
+        {
+            position: relative;
+        }
+
+            #divs div
+            {
+                border: 1px solid red;
+            }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>01.Generate divs</legend>
+        <label for="numberOfDivs">Number of divs</label>
+        <input type="text" id="numberOfDivs" />
+
+        <input type="submit" value="Generate divs" onclick="generateDivs()" />
+    </fieldset>
+
+    <div id="divs"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

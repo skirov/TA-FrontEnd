@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title>01.Planar</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        
+        <p>Write functions for working with shapes in  standard Planar coordinate system</p>
+        
+    </fieldset>
+
+	<div id="js-console"></div>
+    <script src="scripts/sprintf.js"></script>
+	<script src="scripts/js-console.js"></script>
+	<script>
+
+	    function GetPoint(x, y) {
+	        return { x: x, y: y };
+	    }
+
+	    function GetLine(point1, point2) {
+	        return { pointA: point1, pointB: point2 };
+	    }
+
+	    function CalcDistance(point1, point2) {
+
+	        return parseInt(Math.abs(point1.x - point2.x) * Math.abs(point1.x - point2.x)
+            + Math.abs(point1.y - point2.y) * Math.abs(point1.y - point2.y));
+
+	    }
+
+	    function CanFormTriange(line1, line2, line3) {
+
+	        var a = CalcDistance(line1.pointA, line1.pointB);
+	        var b = CalcDistance(line2.pointA, line2.pointB);
+	        var c = CalcDistance(line3.pointA, line3.pointB);
+
+	        if (a + b > c && a + c > b && b + c > a) {
+
+	            jsConsole.writeLine("true");
+
+	        }
+	        else {
+
+	            jsConsole.writeLine("false");
+
+	        }
+	    }
+
+	    var pointOne = GetPoint(1, 2);
+	    var pointTwo = GetPoint(3, 4);
+	    var pointThree = GetPoint(5, 6);
+
+	    var lineOne = GetLine(pointOne, pointTwo);
+	    var lineTwo = GetLine(pointTwo, pointThree);
+	    var lineThree = GetLine(pointOne, pointThree);
+
+	    var n = CalculateDistance(pointThree, pointTwo);
+
+	    jsConsole.writeLine(n);
+
+	    CanFormTriange(lineOne, lineTwo, lineThree);
+
+	</script>
+</body>
+</html>

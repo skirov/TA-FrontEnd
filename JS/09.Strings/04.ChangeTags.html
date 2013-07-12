@@ -1,0 +1,46 @@
+﻿<html>
+<head>
+    <title>04.ChangeTags</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+
+        <p>You are given a text. Write a function that changes the text in all regions</p>
+        <p id="text">We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>. We <mixcase>don't</mixcase> have <lowcase>anything</lowcase> else.</p>
+        <br />
+        <input type="submit" value="Show rendered" onclick="ShowResult()" />
+    </fieldset>
+
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        function transformHtml(html) {
+            return html.replace(/<mixcase>(.*?)<\/mixcase>/gi, function (group) { return generateRandomCaseString(group); })
+            .replace(/<upcase>(.*?)<\/upcase>/gi, function (group) { console.log(group.toUpperCase()); return group.toUpperCase(); })
+            .replace(/<lowcase>(.*?)<\/lowcase>/gi, function (group) { return group.toLowerCase(); })
+            .replace(/<(.*?)>/gi, "");
+        }
+
+        function generateRandomCaseString(str) {
+            var generated = "";
+            var randomNumber;
+
+            for (var ch in str) {
+                randomNumber = Math.floor(Math.random() * 2); // generates 0 or 1
+
+                if (randomNumber == 1) generated += str[ch].toUpperCase(); // lower/upper chance is 50/50
+                else generated += str[ch].toLowerCase();
+            }
+
+            return generated;
+        }
+
+        function ShowResult() {
+            var text = document.getElementById("text").innerHTML;
+            jsConsole.writeLine(transformHtml(text));
+        }
+    </script>
+</body>
+</html>

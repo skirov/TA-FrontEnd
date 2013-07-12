@@ -1,0 +1,43 @@
+﻿<html>
+<head>
+	<title>04.HasPropery</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        
+        <p>Write a function that checks if a given object contains a given property</p>
+        
+    </fieldset>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+
+	    function HasProperty(obj, prpt) {
+
+	        for (var i in obj) {
+
+	            if (i == prpt) {
+	                return true;
+	            }
+
+	        }
+
+	        return false;
+	    }
+
+	    var obj = {
+	        firstName: "John",
+	        lastName: "Doe",
+	        age: 19
+	    }
+
+	    var hasProperty = HasProperty(obj, "age");
+	    var hasProperty2 = HasProperty(obj, "middleName");
+
+	    jsConsole.writeLine(hasProperty);
+	    jsConsole.writeLine(hasProperty2);
+
+	</script>
+</body>
+</html>

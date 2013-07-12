@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Image slider</title>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div id="wrapper">
+    </div>
+
+    <script src="scripts/protoClass.js"></script>
+    <script src="scripts/Url.js"></script>
+    <script src="scripts/Folder.js"></script>
+
+    <script>
+
+        var urls =
+            [
+                new Url("Telerik Academy Forum", "http://forums.academy.telerik.com"),
+                new Url("Telerik Academy Studen System", "http://telerikacademy.com"),
+                new Url("Telerik Academy", "http://academy.telerik.com"),
+            ];
+
+        var firstFolder= new Folder("Telerik Academy", urls);
+        firstFolder.addUrl("Telerik Academy Forum", "http://forums.academy.telerik.com");
+
+        firstFolder.render();
+
+        var urls2 =
+            [
+                new Url("Telerik Academy Forum", "http://forums.academy.telerik.com"),
+                new Url("Telerik Academy Studen System", "http://telerikacademy.com"),
+                new Url("Telerik Academy", "http://academy.telerik.com"),
+            ];
+
+        var secondFolder = new Folder("Telerik Academy", urls2);
+        secondFolder.addUrl("Telerik Academy Forum", "http://forums.academy.telerik.com");
+
+        secondFolder.render();
+    </script>
+</body>
+</html>

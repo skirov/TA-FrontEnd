@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>03.Inputs</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <!--[if lte IE 9]>
+        <script type="text/javascript" src="shims/fd-slider.min.js"></script>
+        <link rel="stylesheet" type="text/css" media="screen, projection" href="http://www.frequency-decoder.com/demo/fd-slider/css/fd-slider.mhtml.min.css" />
+    <![endif]-->
+
+    <!-- Needed for Forms Feature Detection -->
+    <script type="text/javascript" src="shims/shared/js/modernizr.com/Modernizr-2.5.3.forms.js">
+    </script>
+
+    <!-- Needed for Validation -->
+    <script type="text/javascript" src="shims/shared/js/html5Forms.js" data-webforms2-support="date, color, validation, range" data-webforms2-force-js-validation="false" data-lang="en">
+    </script>
+
+</head>
+
+<body>
+    <p>On IE7 the validation bar goest to the top left. This is a shims css mistake and I had no time to fix it.</p>
+    <div id="wrapper">
+        <form action="index.html" method="POST">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Range
+                        </th>
+                        <th>Number
+                        </th>
+                        <th>Email
+                        </th>
+                        <th>Search
+                        </th>
+                        <th>URL
+                        </th>
+                        <th>Tel
+                        </th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>
+                        <input name="html5shim-1" id="Range1" type="range" min="-10" max="10" step="0.20" title="Range: -10 to 10 in steps of 0.2" value="8.2" />
+                    </td>
+                    <td>
+                        <input name="number" type="number" id="number1" required="required" pattern="\b\d+\b" />
+                    </td>
+                    <td>
+                        <input name="email" type="email" id="email" required="required" pattern="^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$" />
+                    </td>
+                    <td>
+                        <input name="search" type="search" id="search" />
+                    </td>
+                    <td>
+                        <input name="url" type="url" id="url" required="required" pattern="((mailto\:|(news|(ht|f)tp(s?))\://){1}\S+)" />
+                    </td>
+                    <td>
+                        <input name="tel" type="tel" id="tel" required="required" pattern="\b\d\b" />
+                    </td>
+                </tr>
+                <thead>
+                    <tr>
+                        <th>Color
+                        </th>
+                        <th>Date
+                        </th>
+                        <th>Datetime
+                        </th>
+                        <th>Month
+                        </th>
+                        <th>Week
+                        </th>
+                        <th>Time
+                        </th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>
+                        <input name="color" type="color" id="color1" />
+                    </td>
+                    <td>
+                        <input name="date" type="date" id="date1" />
+                    </td>
+                    <td>
+                        <input name="datetime" type="datetime" id="datetime1" /></td>
+                    <td>
+                        <input name="month" type="month" id="month1" />
+                    </td>
+                    <td>
+                        <input name="week" type="week" id="week1" />
+                    </td>
+                    <td>
+                        <input name="time" type="time" id="time1" />
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" value="Send" />
+        </form>
+    </div>
+</body>
+</html>

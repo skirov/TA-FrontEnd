@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>05.DigitInWords</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        
+        <label for="number">Number</label>
+        <input type="text" id="number" />
+        <br />
+        <input type="submit" value="DigitInWords" onclick="DigitInWords()" />
+        
+    </fieldset>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    
+	<script>
+        function DigitInWords()
+        {
+            var number = parseInt(document.getElementById("number").value);
+            
+            switch (number)
+            {
+                case 0: jsConsole.writeLine("Zero"); break;
+                case 1: jsConsole.writeLine("One"); break;
+                case 2: jsConsole.writeLine("Two"); break;
+                case 3: jsConsole.writeLine("Three"); break;
+                case 4: jsConsole.writeLine("Four"); break;
+                case 5: jsConsole.writeLine("Five"); break;
+                case 6: jsConsole.writeLine("Six"); break;
+                case 7: jsConsole.writeLine("Seven"); break;
+                case 8: jsConsole.writeLine("Eight"); break;
+                case 9: jsConsole.writeLine("Nine"); break;
+                default: jsConsole.writeLine("I can only count to 9");
+                    break;
+            }
+
+		}	
+	</script>
+</body>
+</html>

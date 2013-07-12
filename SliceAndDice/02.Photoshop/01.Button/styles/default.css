@@ -1,0 +1,38 @@
+div, span
+{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #ccc;
+    font-family: Arial;
+}
+
+div.button{
+    display: inline-block;
+    font-weight: bold;
+}
+
+div.button:hover{
+    cursor: pointer;
+}
+
+span.leftButtonSide{
+    background: url('../images/leftButtonSide.png') no-repeat;
+    width: 23px;
+    height: 54px;
+    float: left;
+}
+span.buttonContent{
+    background: url('../images/buttonBg.png') repeat-x;
+    display: inline-block;
+    height: 54px;
+    line-height: 50px;
+    float: left;
+}
+span.rightButtonSide{
+    background: url('../images/rightButtonSide.png') no-repeat;
+    width: 30px;
+    height: 54px;
+    float: left;
+}

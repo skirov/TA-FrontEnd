@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title>06.MostFrequentElements</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        <p>Most Frequent Elements.</p>
+        <br />
+        <input type="submit" value="Show numbers" onclick="MostFrequentElements()" />
+        
+    </fieldset>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    
+	<script>
+        
+        var array = [1,1,1,57,7,7,7,7,7,5,2,2];
+    
+        array.sort();
+        
+        //print first array
+        jsConsole.writeLine("Print the array");
+        for (var i = 0; i < array.length; i++)
+        {
+            jsConsole.write(array[i] + " ");
+        }
+        function MostFrequentElements()
+        {
+            var start = 0;
+            var len = 1;
+            var bestStart = 0;
+            var bestLen = 1;
+            var arrLength = array.length;
+            for ( i = 0; i < arrLength; i++ ) {
+                if ( array[i] != array[i - 1] ) {
+                    len = 1;
+                   
+                } else {
+                    len ++;
+                    start = 0;
+                }
+                if ( len > bestLen ) {
+                    var bestLen = len;
+                    bestStart = i;
+                }
+               
+            }
+        
+            jsConsole.writeLine();
+            
+            jsConsole.write(array[bestStart]+" -> "+bestLen);
+                
+        }
+	</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿<html>
+<head>
+    <title>03.AllOccurencesOfAWord</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+
+        <p id="text">This is a dummy text. You can add a word in the field below to search it in this text.</p>
+        <input type="text" id="word" />
+        <br />
+        <input type="submit" value="FindWord" onclick="FindWord()" />
+
+    </fieldset>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        function FindWord() {
+            var text = document.getElementById("text").innerHTML;
+
+            var searchWord = document.getElementById("word").value;
+
+            var regexp = new RegExp(searchWord, "gi");
+
+            if (regexp.test(text) == true) {
+                jsConsole.writeLine("The text contains the word " + searchWord);
+            }
+            else {
+                jsConsole.writeLine("The text does not contain the word " + searchWord);
+            }
+        }
+    </script>
+</body>
+</html>
+

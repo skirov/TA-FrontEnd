@@ -1,0 +1,59 @@
+﻿<html>
+<head>
+	<title>06.CheckIfBiggerThanNeighbors</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+        <p>Array of numbers - 4, 7, 3, 1, 9, 4, 2, 5, 8, 6, 7, 4, 5, 8, 9, 2, 1, 8, 9, 5</p>
+
+        <label for="number">Enter a position</label>
+        <input type="text" id="number" />
+        <br />
+        <input type="submit" value="Return last digit" onclick="ShowResults()" />
+        
+    </fieldset>
+
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    
+	<script>
+	    var array = [4, 7, 3, 1, 9, 4, 2, 5, 8, 6, 7, 4, 5, 8, 9, 2, 1, 8, 9, 5];
+
+	    function CheckIfElementNeighboursAreSmaller(elementPosition) {
+
+	        var biggerThanNeighbours;
+
+	        if (elementPosition == array.length - 1) {
+	            biggerThanNeighbours = array[elementPosition] > array[array.length - 2] ? true : false;
+	        }
+	        else if (elementPosition == 0) {
+	            biggerThanNeighbours = array[elementPosition] > array[1] ? true : false;
+	        }
+	        else {
+	            biggerThanNeighbours = array[elementPosition] > array[elementPosition + 1] && array[elementPosition] > array[elementPosition - 1] ? true : false;
+	        }
+
+	        return biggerThanNeighbours;
+	    }
+
+	    function ShowResults() {
+
+	        var input = document.getElementById("number").value;
+
+	        if (input > array.length - 1 || input < 0) {
+	            jsConsole.writeLine("Element you entered is out of range");
+	            return;
+	        }
+
+	        if (CheckIfElementNeighboursAreSmaller(input) == true) {
+	            jsConsole.writeLine("The number at position " + input + " is bigger than its neighbours");
+	        }
+	        else {
+	            jsConsole.writeLine("The number at position " + input + " is not bigger than its neighbours");
+	        }
+	    }
+
+	</script>
+</body>
+</html>

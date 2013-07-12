@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <p>The result is in the console.</p>
+
+    <script src="scripts/protoClass.js"></script>
+    <script src ="scripts/SchoolRepository-classical.js"></script>
+
+    <!-- Classical OOP Example -->
+    <script>
+        var students =
+            [
+                new Student("Eric", "Cartman", 10, 4),
+                new Student("Kyle", "Brauwlauwski", 10, 4),
+                new Student("Stan", "Marsh", 10, 4),
+                new Student("Kenny", "Is Dead", 10, 4),
+            ]
+
+        var formTeacher = new Teacher("Ms.", "Garison", 32, "4th grade");
+
+        var classes =
+            [
+                new Class("4th grade A", 30, students, formTeacher),
+                new Class("4th grade B", 30, students, formTeacher)
+            ]
+
+        var school = new School("South Park Elementary", "South park", classes);
+
+        localStorage.setObject(school.name, school);
+
+        var schoolFromStorage = localStorage.getObject(school.name);
+
+        for (var i = 0; i < schoolFromStorage.classes.length; i++) {
+            console.log("--- Introduce students in "+ school.classes[i].name +" class ---");
+            for (var j = 0; j < school.classes[i].students.length; j++) {
+                console.log(school.classes[i].students[j].introduce());
+            }
+        }
+    </script>
+</body>
+</html>

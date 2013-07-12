@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>04.Calculator</title>
+		
+		<style type="text/css" media="screen">
+			table{
+				background-color: #83cbf9;
+				border: 1px solid #107bbe;
+			}
+			
+			input[type="button"]{
+				background-color: #83cbf9;
+				color: #1369a0;
+				border: none;
+				cursor: pointer;
+				width: 50px;
+				height: 50px;
+				font-size: 14px;
+				font-weight: bold;
+			}
+			
+			input[value="0"]{
+				width: 102px;
+			}
+			
+			textarea{
+				font-family: Arial;
+				text-align: right;
+				width: 95%;
+				background-color: #83cbf9;
+				border: none;
+				height: 50px;
+				font-size: 16px;
+				font-weight: bold;
+				color: #0064aa;
+				overflow: hidden; /*To remove the ugly scrollbars*/
+			}
+			
+		/*Just for fun some hover effects*/
+		
+			input[type="button"]:hover, textarea:focus{
+				background-color: #7ac2f0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<table border="1" cellpadding="0" cellspacing="0">
+			<tbody>
+				<tr>
+					<td colspan="4"><textarea>123</textarea></td>
+				</tr>
+				<tr class="row">
+					<td><input type="button" value="1"/></td>
+					<td><input type="button" value="2"/></td>
+					<td><input type="button" value="3"/></td>
+					<td><input type="button" value="+"/></td>
+				</tr>
+				
+				<tr>
+					<td><input type="button" value="4"/></td>
+					<td><input type="button" value="5"/></td>
+					<td><input type="button" value="6"/></td>
+					<td><input type="button" value="-"/></td>
+				</tr>
+				
+				<tr>
+					<td><input type="button" value="7"/></td>
+					<td><input type="button" value="8"/></td>
+					<td><input type="button" value="9"/></td>
+					<td><input type="button" value="*"/></td>
+				</tr>
+				
+				<tr>
+					<td colspan="2"><input type="button" value="0"/></td>
+					<td><input type="button" value="."/></td>
+					<td><input type="button" value="/"/></td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

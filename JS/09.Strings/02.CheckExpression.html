@@ -1,0 +1,45 @@
+﻿<html>
+<head>
+    <title>02.CheckExpression</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset id="inputs">
+
+        <p>Write a JavaScript function to check if in a given expression the brackets are put correctly.</p>
+        <input type="text" id="expression" />
+        <br />
+        <input type="submit" value="Reverse word" onclick="ShowResult()" />
+    </fieldset>
+
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function ShowResult() {
+            var input = document.getElementById("expression").value;
+            var result = CountBrackets(input);
+            jsConsole.writeLine(result);
+        }
+
+        function CountBrackets(expression) {
+            var countBackets = 0;
+
+            for (var i = 0; i < expression.length; i++) {
+                if (expression[i] == '(') {
+                    countBackets++;
+                }
+                else if (expression[i] == ')') {
+                    countBackets--;
+                }
+            }
+
+            if (countBackets == 0) {
+                return "Correct Expression";
+            }
+            else {
+                return "Inorrect Expression";
+            }
+        }
+    </script>
+</body>
+</html>
