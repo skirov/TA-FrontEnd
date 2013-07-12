@@ -175,6 +175,7 @@ AssemblyInfo.cs
 *.pptx
 *.docx
 *.xlsx
+*.pdf
 
 #Folders
 SEO
